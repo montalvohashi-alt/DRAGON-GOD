@@ -1,0 +1,8 @@
+# Example Android signing configuration for St. Cecilia's College Alumni App
+# Rename this file to 'key.properties' in this directory (flutter_app/android/key.properties)
+# WARNING: Never commit real passwords or key.properties to public git repositories.
+
+storePassword=YourKeystorePasswordHere
+keyPassword=YourKeyPasswordHere
+keyAlias=cecilian_release_key
+storeFile=../cecilian-release-key.jks
