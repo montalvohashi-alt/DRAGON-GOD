@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../services/alumni_repository.dart';
-import '../services/connectivity_service.dart';
 
 class OfflineFullscreenOverlay extends StatefulWidget {
   final VoidCallback onDismiss;
@@ -568,11 +567,11 @@ class _OfflineFullscreenOverlayState extends State<OfflineFullscreenOverlay> {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                 decoration: BoxDecoration(
-                  color: Colors.emerald.withOpacity(0.2),
+                  color: const Color(0xFF10B981).withOpacity(0.2),
                   borderRadius: BorderRadius.circular(6),
-                  border: Border.all(color: Colors.emerald.withOpacity(0.4)),
+                  border: Border.all(color: const Color(0xFF10B981).withOpacity(0.4)),
                 ),
-                child: const Text('OFFLINE VALID', style: TextStyle(color: Colors.emeraldAccent, fontSize: 9, fontWeight: FontWeight.bold)),
+                child: const Text('OFFLINE VALID', style: TextStyle(color: Color(0xFF34D399), fontSize: 9, fontWeight: FontWeight.bold)),
               ),
             ],
           ),

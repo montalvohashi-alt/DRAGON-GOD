@@ -26,7 +26,6 @@ class _NetworkScreenState extends State<NetworkScreen> {
     final repo = context.read<AlumniRepository>();
     final isConnected = repo.currentUser?.connections.contains(user.uid) ?? false;
     final isMe = repo.currentUser?.uid == user.uid;
-    final isDark = context.isDarkMode;
 
     showModalBottomSheet(
       context: context,

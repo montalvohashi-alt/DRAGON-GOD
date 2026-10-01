@@ -281,9 +281,14 @@ class _NotificationSheetState extends State<NotificationSheet> {
         badgeColor = const Color(0xFF059669);
         icon = Icons.campaign_outlined;
         break;
-      default:
-        badgeColor = const Color(0xFF3B82F6);
+      case NotificationCategory.career:
+        badgeColor = const Color(0xFF2563EB);
+        icon = Icons.work_outline;
+        break;
+      case NotificationCategory.system:
+        badgeColor = const Color(0xFF4B5563);
         icon = Icons.notifications_active;
+        break;
     }
 
     return Dismissible(

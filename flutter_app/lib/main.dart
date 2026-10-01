@@ -158,9 +158,8 @@ class _StateDrivenAppShellState extends State<StateDrivenAppShell> {
         activeWidget = const AuthScreen(key: ValueKey('view-auth'));
         break;
       case AppView.portal:
-      default:
         if (currentUser == null) {
-          activeWidget = const AuthScreen(key: ValueKey('view-auth-fallback'));
+          activeWidget = const LandingScreen(key: ValueKey('view-landing-fallback'));
         } else if (isAdmin) {
           // Administrative Workspace Layout (Admin, Staff, Super Admin, Employer)
           activeWidget = const AdminWorkspaceLayout(key: ValueKey('view-portal-admin'));

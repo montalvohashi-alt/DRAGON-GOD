@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../models/models.dart';
 import '../services/alumni_repository.dart';
 import '../services/connectivity_service.dart';
-import 'auth_screen.dart';
 
 class LandingScreen extends StatefulWidget {
   const LandingScreen({super.key});

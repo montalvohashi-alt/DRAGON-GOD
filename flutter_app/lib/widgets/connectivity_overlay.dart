@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:provider/provider.dart';
-import '../services/connectivity_service.dart';
 import 'offline_fullscreen_overlay.dart';
 
 /// ConnectivityOverlay wraps the application root or any screen tree to monitor

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../theme/app_theme.dart';
 
 /// Non-intrusive Offline Indicator Widget for PWA & Mobile
 /// Matches the exact offline banner from the React web portal

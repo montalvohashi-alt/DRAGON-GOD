@@ -30,6 +30,21 @@ class FCMService extends ChangeNotifier {
   List<NotificationModel> get notifications => List.unmodifiable(_notifications);
   int get unreadCount => _notifications.where((n) => !n.isRead).length;
   Stream<NotificationModel> get onNotificationReceived => _notificationStreamController.stream;
+  Set<String> get subscribedTopics => Set.unmodifiable(_subscribedTopics);
+
+  bool isSubscribedTo(String topic) => _subscribedTopics.contains(topic);
+
+  void subscribeToTopic(String topic) {
+    if (_subscribedTopics.add(topic)) {
+      notifyListeners();
+    }
+  }
+
+  void unsubscribeFromTopic(String topic) {
+    if (_subscribedTopics.remove(topic)) {
+      notifyListeners();
+    }
+  }
 
   // Global key to display collegiate banner toasts from any foreground push
   static final GlobalKey<ScaffoldMessengerState> messengerKey = GlobalKey<ScaffoldMessengerState>();
@@ -125,9 +140,14 @@ class FCMService extends ChangeNotifier {
         badgeColor = const Color(0xFF059669); // Emerald
         icon = Icons.campaign_outlined;
         break;
-      default:
-        badgeColor = const Color(0xFF3B82F6);
+      case NotificationCategory.career:
+        badgeColor = const Color(0xFF2563EB); // Royal Blue
+        icon = Icons.work_outline;
+        break;
+      case NotificationCategory.system:
+        badgeColor = const Color(0xFF4B5563); // Stone Gray
         icon = Icons.notifications_active_outlined;
+        break;
     }
 
     state.showSnackBar(

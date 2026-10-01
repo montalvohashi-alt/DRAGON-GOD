@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../models/models.dart';
+export '../models/models.dart';
 
 class AlumniRepository extends ChangeNotifier {
   UserModel? _currentUser;
